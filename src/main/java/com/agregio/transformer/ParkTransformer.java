@@ -11,13 +11,13 @@ import org.springframework.util.CollectionUtils;
 import com.agregio.dto.BlocParkDto;
 import com.agregio.dto.ParkDto;
 import com.agregio.entity.ParkEntity;
-@Component("parkTransformer")
-public class ParkTransformer implements ITransformer<ParkEntity,ParkDto>  {
 
-	
+@Component("parkTransformer")
+public class ParkTransformer implements ITransformer<ParkEntity, ParkDto> {
+
 	@Override
 	public ParkDto toModel(ParkEntity entity) {
-		 ParkDto destination = BeanUtils.instantiateClass(ParkDto.class);
+		ParkDto destination = BeanUtils.instantiateClass(ParkDto.class);
 		BeanUtils.copyProperties(entity, destination);
 		return destination;
 	}
@@ -31,14 +31,14 @@ public class ParkTransformer implements ITransformer<ParkEntity,ParkDto>  {
 
 	@Override
 	public List<ParkEntity> toEntities(List<ParkDto> model) {
-		
-		return model.stream().map(e->this.toEntity(e)).toList();
-	
+
+		return model.stream().map(e -> this.toEntity(e)).toList();
+
 	}
 
 	@Override
 	public List<ParkDto> toModel(List<ParkEntity> entity) {
-		return entity.stream().map(e->this.toModel(e)).toList();
-			}
+		return entity.stream().map(e -> this.toModel(e)).toList();
+	}
 
 }

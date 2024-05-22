@@ -1,6 +1,7 @@
 package com.agregio.controller;
 
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -30,13 +31,10 @@ public class OffreController {
 		//return offreService.saveOffre(offre);
 		 return null;
 	}
-	@GetMapping("/all")
-	public void findAll() {
-		offreService.saveOffre(new OffreDto());
-	}
+	
 	
 	@GetMapping("/findAllOrderByMarche")
-	public void findAllOrderByMarche() {
-		offreService.findAllGroupByMarche();
+	public Map<Long, List<OffreDto>> findAllOrderByMarche() {
+		return offreService.findAllGroupByMarche();
 	}
 }

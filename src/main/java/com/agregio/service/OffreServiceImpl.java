@@ -50,7 +50,7 @@ public class OffreServiceImpl implements IOffreService {
 	public Map<Long, List<OffreDto>> findAllGroupByMarche() {
 		List<OffreEntity> offres =offreDao.findAll();
 		List<OffreDto> offresDto = offreTransformer.toModel(offres);
-		return offresDto.stream().collect(Collectors.groupingBy(t -> t.getMarche().getId()));
+		return offresDto.stream().filter(e->e.getMarche()!=null && e.getMarche().getId()!=null).collect(Collectors.groupingBy(t -> t.getMarche().getId()));
 		
 	}
 	
