@@ -24,7 +24,7 @@ public class OffreTransformer implements ITransformer<OffreEntity,OffreDto>  {
 			marchenewDto.setName(entity.getMarche().getName());	
 		}
 		
-		destination.setMarche(new MarcheDto());
+		destination.setMarche(marchenewDto);
 		return destination;
 	}
 
