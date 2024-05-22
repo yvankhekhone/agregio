@@ -1,0 +1,4 @@
+com\agregio\AbstractTest.class
+com\agregio\dao\ParkDaoTest.class
+com\agregio\dao\transformer\ParkTransformerTest.class
+com\agregio\service\ParkServiceTest.class

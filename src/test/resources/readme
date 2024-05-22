@@ -1,0 +1,10 @@
+schema.sql contient la creation de la table pou H2 ou pour autres databases
+creer votre proppre base de données postgres  avec les configurations qui se trouve dans application.properties 
+
+j ai choisi H2 pour les tests
+creation de postgres 
+utilisation des techno postgres , H2 en base de données
+Mockito ,  pour mocker les services et les objets.
+
+les api sont dans les Controller 
+
